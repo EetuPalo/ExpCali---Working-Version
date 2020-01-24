@@ -1,0 +1,33 @@
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@using ASP.NET_Training_Project.Models
+@model ASP.NET_Training_Project.Models.Login
+@{
+    Layout = "_Layout";
+}
+
+<h1>Login</h1>
+<fieldset>
+    <form asp-action="Login" asp-controller="Account">
+        <div asp-validation-summary="All" class="input-validation-error"></div>
+        <p>
+            <label asp-for="userName"></label>
+            <input asp-for="userName" class="form-control" placeholder="Username" />
+            <span asp-validation-for="userName"></span>
+        </p>
+
+        <p>
+            <label asp-for="password"></label>
+            <input asp-for="password" class="form-control" placeholder="Password" />
+            <span asp-validation-for="password"></span>
+        </p>
+        <p>
+            <button type="submit">Login</button>
+        </p>
+
+    </form>
+
+</fieldset>
+
+}
+
+
