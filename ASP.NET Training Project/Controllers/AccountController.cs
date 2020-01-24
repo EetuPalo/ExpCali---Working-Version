@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ASP.NET_Training_Project.Models;
-using ASP.NET_Training_Project.ViewModels;
+//using ASP.NET_Training_Project.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +27,7 @@ namespace ASP.NET_Training_Project.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public async Task<IActionResult> Login(LoginVM user)
+        public async Task<IActionResult> Login(Login user)
         {
             var result = await SignInMgr.PasswordSignInAsync(user.userName, user.password, false, false);
             if (result.Succeeded)
@@ -41,7 +41,7 @@ namespace ASP.NET_Training_Project.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Register(Signup newUser)
+        public async Task<IActionResult> Register(User newUser)
         {
             try
             {

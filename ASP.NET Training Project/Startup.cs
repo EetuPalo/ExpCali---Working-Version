@@ -40,13 +40,14 @@ namespace ASP.NET_Training_Project
                 options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<IdentityDataContext>();
 
-            //This protects against excessive authentication attempts
+            
             services.Configure<IdentityOptions>(options => 
             {
+                //This protects against excessive authentication attempts
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.AllowedForNewUsers = true;
-                //password settings - these are quite lenient for testing purposes
+                //Password settings - these are quite lenient for testing purposes
                 options.Password.RequireDigit = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
