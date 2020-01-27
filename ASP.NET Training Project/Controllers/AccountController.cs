@@ -12,6 +12,7 @@ namespace ASP.NET_Training_Project.Controllers
 {
     public class AccountController : Controller
     {
+        //These create the user, validates them, and adds them to the database
         private UserManager<AppUser> UserMgr { get; }
         private SignInManager<AppUser> SignInMgr { get; }
 

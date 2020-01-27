@@ -11,6 +11,7 @@ namespace ASP.NET_Training_Project.Models
     {
         public IdentityDataContext(DbContextOptions<IdentityDataContext> options) : base(options)
         {
+            //This is needed to create the database automatically
             Database.EnsureCreated();
         }
     }
